@@ -1,0 +1,67 @@
+generated: '2026-08-29'
+method: searched
+source: https://support.taulia.com/technical-resources/sap/sap-release-notes
+scheme: named-seasonal-release (platform) + numbered support package (ERP add-ons)
+current_version:
+  platform: Taulia Release Notes - Spring 2024
+  sap_integration_suite_addon: SP07
+  sap_addon: '5.3'
+  oracle_ebs_addon: SP1.6
+indexes:
+- url: https://support.taulia.com/technical-resources/sap/sap-release-notes
+  status: 200
+  title: SAP Release Notes
+- url: https://support.taulia.com/technical-resources/other-erp/other-erp-release-notes
+  status: 200
+  title: Other ERP Release Notes
+- url: https://support.taulia.com/technical-resources/documentation/docs-user-guides
+  status: 200
+  title: User Guides (carries the platform Spring/Fall release notes)
+entries:
+- version: Taulia Add-on for SAP Integration Suite, Managed Gateway SP07
+  date: '2026-05-15'
+  url: https://support.taulia.com/article/Taulia-Add-on-for-SAP-integration-suite-managed-gateway-SP07-Release-Notes
+  support_period: '2026-05-15 to 2028-05-15'
+  breaking: false
+  highlights:
+  - Pay Before Maturity for Virtual Card programs, with a new VC_EP_PAYMENT_TERM global parameter.
+  - >-
+    Taulia Connector Activity Monitor (t-code TAUCIG_CONNECTOR) — a dashboard over every
+    integration process, with message statuses, logs and XML payload inspection.
+  - Credit Note Netting support for Virtual Card early payment requests, including cancellation.
+  - >-
+    Two new REST message headers on every send process, x-tau-integration-source and
+    x-tau-integration-source-version, identifying the add-on and its support-pack level.
+  - >-
+    Receivables partial payments and partial payment reversals now auto-queue a retransfer so
+    invoice status is corrected on the Taulia Platform.
+  - DigiCert certificate transition from G1 to G5 on the Managed Gateway platform.
+  fixes:
+  - Dynamic Discounting compliance credit note posting on multi-GL-line and multi-tax-line invoices.
+  - Early Payment Request discount days/percentage/amount not updating on some SAP versions.
+  - >-
+    Reversal of a Dynamic Discounting compliance credit note posted in a closed period during
+    Early Payment Cancel.
+  note: >-
+    This release note also changes the parameters of method DURING_UPDATE in the
+    TAUCIG_WC_INVOICE_UPDATE BAdI — a breaking change for customers who enhanced that method.
+- version: Taulia Add-on for SAP Integration Suite, Managed Gateway SP06
+  date: null
+  url: https://support.taulia.com/article/Taulia-add-on-for-SAP-integration-suite-managed-gateway-SP06-Release-Notes
+- version: Taulia Add-on for SAP 5.3
+  date: null
+  url: https://support.taulia.com/article/Taulia-Add-on-for-SAP-5-3-Release-Notes
+- version: Taulia Oracle EBS R12 Add-on for Oracle SP1.6
+  date: null
+  url: https://support.taulia.com/article/Taulia-Oracle-EBS-R12-Add-on-for-Oracle-SP1-6-Release-notes
+- version: Taulia Release Notes - Spring 2024
+  date: null
+  url: https://support.taulia.com/article/Taulia-Release-Notes-Spring-2024
+- version: Taulia Release Notes - Fall 2023
+  date: null
+  url: https://support.taulia.com/article/Taulia-Release-Notes-Fall-2023
+coverage_note: >-
+  19 dated release-note articles are indexed in the support sitemap. Only SP07 was read in full
+  for this pass, so only its date is recorded; the rest carry a title and a URL and no invented
+  dates. The release notes describe ERP add-on and platform behaviour, not API contract changes —
+  there is no API changelog, because there is no published API contract to version.

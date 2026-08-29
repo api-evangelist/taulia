@@ -1,0 +1,20 @@
+generated: '2026-08-29'
+method: searched
+source: https://taulia.com/company/contact-us/
+plan_count: 0
+pricing_page: null
+note: >-
+  SAP Taulia publishes no pricing page and no plans. https://taulia.com/pricing/ returns 404, and
+  the llms.txt global index — which enumerates every public section of the site — lists no pricing
+  or plans page at all. Every commercial route on the site is a contact form: "Contact us",
+  "Get in touch with your Taulia representative", and enterprise onboarding through SAP. Supplier
+  economics are program-specific (a discount rate or financing fee negotiated per buyer program),
+  which is why there is no list price to publish.
+plans: []
+evidence:
+- url: https://taulia.com/pricing/
+  status: 404
+- url: https://taulia.com/llms.txt
+  status: 200
+- url: https://taulia.com/company/contact-us/
+  status: 200

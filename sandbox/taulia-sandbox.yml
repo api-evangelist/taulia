@@ -1,0 +1,37 @@
+generated: '2026-08-29'
+method: searched
+source: https://taulia.com/dss/ + https://status.taulia.com/api/v2/summary.json
+public_sandbox: false
+self_service_signup: false
+environments:
+- name: Staging (NA / EU)
+  region: North America and Europe
+  evidence: >-
+    A "Staging" component group appears on the SAP Taulia status page alongside North America and
+    Europe, carrying the same five monitored components (Web Portal, XMLRPC, AnyERP, eFile/eSend,
+    Analytics).
+  source: https://status.taulia.com/api/v2/summary.json
+  publicly_reachable: false
+- name: Middle East Staging
+  region: Middle East
+  evidence: A separate "Middle East Staging" component group on the same status page.
+  source: https://status.taulia.com/api/v2/summary.json
+  publicly_reachable: false
+- name: Taulia dev sandbox IAS tenant
+  evidence: >-
+    The S/4HANA activation guide uses https://tauliadevsandbox.accounts400.ondemand.com as its
+    worked example of an SAP IAS issuer URL, confirming a named Taulia sandbox tenant exists in the
+    SAP Cloud Identity Services dev landscape.
+  source: >-
+    https://support.taulia.com/article/Easy-Guide-to-Activating-SAP-Taulia-with-S-4HANA-Cloud-Public-Edition
+  publicly_reachable: false
+test_values: []
+test_credentials: []
+note: >-
+  Non-production environments demonstrably exist and are monitored per region, but none is
+  publicly reachable and none can be self-provisioned. The Description of Software Services states
+  that staging/test environments are provided "with best intent availability" and that production
+  SLAs do not apply to them — that is a contractual entitlement for an onboarded customer, not a
+  developer sandbox. No test keys, test identifiers, fixtures, or simulator values are published,
+  and none were invented. No Sandbox pointer is emitted, because there is nothing a developer can
+  reach without a signed agreement.

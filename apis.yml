@@ -1,23 +1,147 @@
 aid: taulia
 name: Taulia
-description: 'Taulia is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  SAP Taulia is a working-capital and cash-flow acceleration platform for enterprises, their
+  suppliers and their funding partners. Acquired by SAP in 2022 and now operated as SAP Taulia, it
+  runs supply chain finance, dynamic discounting, ERP-embedded virtual cards, receivables finance,
+  inventory finance, supplier self-service and supplier information management across SAP and
+  non-SAP ERP estates. Its programmatic surface is an enterprise integration estate rather than a
+  public developer platform: a Taulia Buyer API and Taulia Supplier API described in the
+  Description of Software Services, an XMLRPC interface monitored per region on the public status
+  page, a Taulia Connector supporting SFTP, AS2 and HTTP with EDI, cXML and XML payloads, and ERP
+  add-ons for SAP, SAP Integration Suite managed gateway and Oracle EBS. No OpenAPI, AsyncAPI,
+  GraphQL SDL, WSDL, Postman collection or SDK is published anywhere, and API credentials are
+  provisioned during onboarding rather than through self-service.
+image: https://taulia.com/wp-content/uploads/2025/04/android-chrome-512x512-1-300x300.png
 url: https://raw.githubusercontent.com/api-evangelist/taulia/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment-2026-08-29
 specificationVersion: '0.20'
 created: '2026-08-29'
 modified: '2026-08-29'
 tags:
 - Company
-apis: []
+- Working Capital
+- Supply Chain Finance
+- Dynamic Discounting
+- Accounts Payable
+- Accounts Receivable
+- Invoicing
+- Payments
+- Procurement
+- Financial Services
+- ERP Integration
+- SAP
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: Taulia Buyer API
+  description: >-
+    The buyer-side integration API described in the SAP Taulia Description of Software Services.
+    It carries the accounts-payable object set — supplier master, business unit, purchase orders,
+    invoices, payments and early payment requests — between a customer's ERP and the Taulia
+    Platform. Authentication for the SAP S/4HANA Cloud Public Edition path is an OIDC JWT-bearer
+    trust with the audience extapi-buyer-integration, registered in Taulia under Settings >
+    Integrations > Setup Token.
+  humanURL: https://taulia.com/dss/
+  tags:
+  - Accounts Payable
+  - Supply Chain Finance
+  - ERP Integration
+  properties:
+  - type: Documentation
+    url: https://taulia.com/dss/
+  - type: GettingStarted
+    url: https://support.taulia.com/article/Easy-Guide-to-Activating-SAP-Taulia-with-S-4HANA-Cloud-Public-Edition
+  - type: Authentication
+    url: authentication/taulia-authentication.yml
+  x-base-url: >-
+    NOT PUBLISHED. No SAP Taulia page states a base URL for this API. api.taulia.com resolves in
+    DNS to a Taulia-controlled AWS ELB named soapelbg-599781985.us-east-1.elb.amazonaws.com but
+    drops the TLS handshake for anonymous clients, so it could not be confirmed as this API's host.
+    Recording the absence rather than guessing the base from the domain.
+- name: Taulia Supplier API
+  description: >-
+    The supplier-side integration API described in the SAP Taulia Description of Software Services.
+    It exchanges information between the Taulia Platform and a supplier's accounts-receivable data:
+    submitting invoices, checking invoice status, and receiving or confirming purchase orders.
+    Documented as RESTful with resource-oriented URLs, JSON request and response bodies, HTTP verbs
+    and HTTP status codes for errors, authenticated with an assigned API key.
+  humanURL: https://taulia.com/dss/
+  tags:
+  - Accounts Receivable
+  - Invoicing
+  - Supplier Management
+  properties:
+  - type: Documentation
+    url: https://taulia.com/dss/
+  - type: Authentication
+    url: authentication/taulia-authentication.yml
+  x-base-url: >-
+    NOT PUBLISHED. Same finding as the Buyer API — no base URL is stated in any public SAP Taulia
+    document.
 common:
 - type: Website
-  url: https://forgeglobal.com/taulia_stock/
+  url: https://taulia.com/
+- type: Documentation
+  url: https://support.taulia.com/technical-resources
+- type: GettingStarted
+  url: https://support.taulia.com/article/Easy-Guide-to-Activating-SAP-Taulia-with-S-4HANA-Cloud-Public-Edition
+- type: Support
+  url: https://support.taulia.com/contactsupport
+- type: HelpCenter
+  url: https://support.taulia.com/
+- type: Blog
+  url: https://taulia.com/resources/blog/
+- type: BlogRSS
+  url: https://taulia.com/feed/
+- type: GitHubOrganization
+  url: https://github.com/taulia
+- type: Login
+  url: https://login.na1prd.taulia.com/
+- type: TermsOfService
+  url: https://taulia.com/terms-conditions/
+- type: PrivacyPolicy
+  url: https://taulia.com/privacy-statement/
+- type: Compliance
+  url: https://taulia.com/sap-taulia-agreements/
+- type: Glossary
+  url: https://taulia.com/glossary/
+- type: StatusPage
+  url: https://status.taulia.com/
+- type: LLMsTxt
+  url: llms/taulia-llms.txt
+- type: WellKnown
+  url: well-known/taulia-well-known.yml
+- type: SecurityTxt
+  url: well-known/taulia-security.txt
+- type: Security
+  url: security/taulia-vulnerability-disclosure.yml
+- type: VulnerabilityDisclosure
+  url: security/taulia-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/taulia-domain-security.yml
+- type: Conformance
+  url: conformance/taulia-conformance.yml
+- type: Lifecycle
+  url: lifecycle/taulia-lifecycle.yml
+- type: ChangeLog
+  url: changelog/taulia-changelog.yml
+- type: Authentication
+  url: authentication/taulia-authentication.yml
+- type: Conventions
+  url: conventions/taulia-conventions.yml
+- type: Plans
+  url: plans/taulia-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/taulia-rate-limits.yml
+x-enrichment:
+  date: '2026-08-29'
+  status: enriched
+  artifacts_added: 17
+  pass: local-v1

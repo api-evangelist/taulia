@@ -1,0 +1,31 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  Searched taulia.com, https://taulia.com/llms.txt, support.taulia.com, the public GitHub
+  organisation and npm/PyPI for a hosted or stdio MCP server. None exists.
+status: none
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched
+tools: []
+note: >-
+  SAP Taulia ships no MCP server, hosted or local. No /mcp or /sse endpoint was guessed or probed
+  — guessing an endpoint URL is worse than recording the absence. No candidate tool list could be
+  derived either, because there is no OpenAPI to derive operations from: the only published
+  description of the API surface is prose in the Description of Software Services. The one
+  MCP-adjacent string on any Taulia host is `mcp_api` in the Salesforce Experience Cloud OIDC
+  scopes on support.taulia.com, which is a stock Salesforce platform scope and has nothing to do
+  with SAP Taulia shipping an MCP server.
+evidence:
+- url: https://taulia.com/llms.txt
+  status: 200
+  finding: >-
+    The llms.txt is a complete global index of the public site and lists no developer, API, or MCP
+    surface of any kind.
+- url: https://github.com/taulia
+  status: 200
+  finding: 7 public repos, none MCP-related, newest push 2021-01-08.

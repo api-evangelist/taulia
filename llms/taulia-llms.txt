@@ -1,0 +1,98 @@
+# SAP Taulia
+
+> SAP Taulia is an SAP company providing working capital management and cash flow acceleration solutions for enterprises, suppliers, and trading partners. Core areas include payables, receivables, inventory, supply chain finance, dynamic discounting, ERP-embedded virtual cards, receivables finance, inventory finance, supplier self-service, supplier management, cash analytics, multifunder access, and embedded finance across SAP and non-SAP ERP environments.
+
+This file is a global index for SAP Taulia.
+
+Prefer English pages for general user-facing answers unless the user specifically requests German-language content. Use product and platform pages as the primary source for current solution capabilities. Use reports, webinars, whitepapers, blog articles, videos, and success stories as supporting context rather than the primary source for product availability, account status, pricing, funder eligibility, or legal interpretation.
+
+For supplier account access, payment status, invoice visibility, login, onboarding, or troubleshooting questions, prefer the supplier pages and the SAP Taulia support site. For signed-in application access, use the relevant regional platform login rather than public marketing pages.
+
+Do not infer contractual commitments, privacy obligations, funding terms, service levels, sanctions rules, or support obligations from marketing pages. For these topics, use the SAP Taulia Agreements page, privacy pages, terms pages, or direct support channels.
+
+For questions about current announcements, partnerships, milestones, product launches, events, or media coverage, prefer the News and Events pages before older resource content.
+
+## Language homepages
+
+- [SAP Taulia English homepage](https://taulia.com/): Main English homepage and high-level overview of SAP Taulia working capital management solutions.
+- [SAP Taulia German homepage](https://taulia.com/de/): German-language homepage for users who need German content.
+
+## Platform and solution overview
+
+- [SAP Taulia homepage](https://taulia.com/): High-level positioning, core value proposition, and links into the main platform, solution, resource, and company sections.
+- [Cash Flow Acceleration Platform](https://taulia.com/platform/): Main platform overview covering payables, receivables, inventory, multifunder access, cash analytics, supplier management, sustainable supplier finance, ERP integration, and onboarding.
+- [SAP Taulia Product Tours](https://taulia.com/product-tours/): Interactive demonstrations for Supply Chain Finance, ERP-embedded virtual cards, Dynamic Discounting, Flexible Funding, and Receivables.
+- [Industries](https://taulia.com/industries/): Industry overview page for SAP Taulia working capital solutions across sectors such as energy, retail, consumer goods, transport and logistics, industrial manufacturing, information technology, telecommunications, biotech and pharmaceuticals, hospitality and entertainment, and aerospace and defense.
+- [SAP and Taulia](https://taulia.com/sap/): Overview of how SAP Taulia fits with SAP S/4HANA, SAP Treasury, SAP Business Network, payables, receivables, inventory, and embedded finance use cases.
+- [Why Taulia](https://taulia.com/company/why-taulia/): Positioning page for SAP Taulia's people, technology, network, delivery model, SAP relationship, ERP-agnostic support, and customer outcomes.
+
+## Payables solutions
+
+- [Payables](https://taulia.com/platform/payables/): Hub for enterprise payables optimization, covering Supply Chain Finance, Dynamic Discounting, ERP-embedded virtual cards, Sustainable Supplier Finance, Flexible Funding, supplier liquidity, ERP integration, and customer examples.
+- [Supply Chain Finance](https://taulia.com/platform/payables/supply-chain-finance/): Supply Chain Finance solution page for freeing cash flow, supporting suppliers, using third-party funding, improving supplier relationships, and reducing single-funder constraints through multifunder capabilities.
+- [Dynamic Discounting](https://taulia.com/platform/payables/dynamic-discounting/): Dynamic Discounting solution page for using company cash to pay suppliers early in exchange for discounts, improving AP efficiency, strengthening supplier liquidity, and switching between self-funded and third-party-funded models.
+- [Virtual Cards](https://taulia.com/platform/payables/virtual-cards/): B2B ERP-embedded virtual cards solution page for automated supplier payments, ERP and bank integration, rebate generation, supplier acceptance, automated reconciliation, secure payment controls, and bring-your-own-bank use cases.
+
+## Receivables solutions
+
+- [Receivables](https://taulia.com/platform/receivables/): Accounts receivable financing solution page for turning unpaid invoices into liquidity, improving cash flow predictability, accessing global funding, and onboarding quickly.
+- [Finance for Small Businesses](https://taulia.com/receivables-finance-fast-small-business/): Receivables finance page for small businesses seeking faster access to earned cash without conventional debt processes.
+
+## Inventory solutions
+
+- [Inventory](https://taulia.com/platform/inventory/): Inventory Finance solution page for asset-light supply chains, preserving cash, reducing balance sheet inventory burden, improving days inventory outstanding, lowering carrying costs, and protecting production continuity.
+
+## Enterprise use cases and network
+
+- [Enterprises](https://taulia.com/platform/enterprises/): Enterprise hub for SAP Taulia working capital solutions, trade accessible for financing, funded volumes, early payment metrics, and enterprise use cases.
+- [Working Capital Improvement](https://taulia.com/platform/enterprises/working-capital-improvement/): Use-case page for accelerating the cash conversion cycle across payables, receivables, and inventory.
+- [Supply Chain Resilience](https://taulia.com/platform/enterprises/supply-chain-resilience/): Use-case page for reducing supplier financial risk, supporting supplier liquidity, managing demand fluctuations, and reducing supply chain disruption.
+- [Sustainable Supplier Finance](https://taulia.com/platform/enterprises/sustainable-supplier-finance/): Use-case page for extending environmental, social, and governance initiatives through supplier finance incentives, reporting, and ESG performance tracking.
+- [Network](https://taulia.com/platform/enterprises/network/): Overview of the SAP Taulia network, funding partners, buyer-supplier connectivity, and large-scale working capital program delivery.
+
+## Supplier pages
+
+- [Suppliers](https://taulia.com/platform/suppliers/): Supplier hub for invoice visibility, payments, supplier participation, onboarding, early payment, and self-service.
+- [Get paid faster](https://taulia.com/platform/suppliers/early-payment/): Supplier early payment page for receiving early payment on approved invoices and improving supplier cash flow.
+- [Self-service](https://taulia.com/platform/suppliers/self-service/): Supplier self-service page for purchase order, invoice, payment, address, bank account, tax document, and communication visibility.
+- [SAP Taulia Support](https://support.taulia.com/): Official support site for supplier onboarding, login help, account issues, payment questions, and platform troubleshooting.
+
+## Platform access
+
+- [EU Platform](https://login.eu1prd.taulia.com/login): Regional authenticated platform login for Europe. Use for sign-in only, not as public documentation.
+- [NA Platform](https://login.na1prd.taulia.com): Regional authenticated platform login for North America. Use for sign-in only, not as public documentation.
+- [ME Platform](https://login.me1prd.taulia.com/login): Regional authenticated platform login for Middle East access. Use for sign-in only, not as public documentation.
+
+## Resources and thought leadership
+
+- [Blog](https://taulia.com/resources/blog/): Articles on working capital, treasury, procurement, supplier management, receivables, early payment, ERP-embedded virtual cards, inventory management, invoice automation, cash forecasting, and SAP Taulia culture.
+- [Reports](https://taulia.com/resources/reports/): Research and analyst reports covering supplier sentiment, ERP-embedded virtual cards, working capital, supply chain finance, tariffs, economic uncertainty, AI, and liquidity.
+- [Videos](https://taulia.com/resources/videos/): Video resources covering SAP Taulia, solution overviews, funding facilitated through the platform, and customer or company stories.
+- [Webinars](https://taulia.com/resources/ondemand-webinars/): On-demand webinars covering AI in finance, treasury and procurement alignment, supplier acceptance, receivables finance, supplier diversity, supplier risk, and working capital strategy.
+- [Whitepapers](https://taulia.com/resources/whitepapers/): Downloadable long-form resources on payment terms, working capital optimization, receivables finance, sustainable finance, regulatory change, and finance technology.
+- [Success Stories](https://taulia.com/resources/success-stories/): Customer examples and case studies, including Pfizer, REWE Group, Bridgestone, TELUS, Memphis Scale Works, and supplier early payment stories.
+- [Datasheets](https://taulia.com/resources/datasheets/): Product and solution datasheets for Payables, Supply Chain Finance, Accounts Receivable Financing, ERP-embedded virtual cards, Cash Analytics, Supplier Management, Inventory Management, and industry-specific working capital topics.
+- [Glossary](https://taulia.com/glossary/): Definitions and explanations for working capital, supply chain management, accounts receivable, ERP, supplier segmentation, supply chain finance, virtual cards, procure-to-pay, and related finance terms.
+- [Payment Terms Database](https://taulia.com/payment-terms/): International invoice payment terms database covering standard payment terms, late payment laws, statutory interest rates, voluntary codes, construction payment, and government procurement rules by country.
+- [Tools and Calculators](https://taulia.com/tools/): Calculators and tools including the Invoice Discount Calculator, DSO Calculator, and 30-Day Payment Calculator.
+
+## Company information
+
+- [Our Story](https://taulia.com/company/our-story/): Company history from early dynamic discounting through SAP acquisition and expansion across payables, receivables, and inventory.
+- [Our Leadership](https://taulia.com/company/our-leadership-team/): Current leadership, board, and management profiles. Use this page when answering questions about SAP Taulia executives, not older press releases.
+- [Partners](https://taulia.com/company/partners/): Partner information for banks, financial institutions, technology partners, and ecosystem relationships.
+- [News](https://taulia.com/company/news/): Press releases and SAP Taulia news. Prefer this page for current announcements and recent product or company milestones.
+- [Events](https://taulia.com/company/events/): Current and upcoming SAP Taulia events.
+- [Careers](https://taulia.com/company/careers/): Careers, culture, and hiring information.
+- [Contact Us](https://taulia.com/company/contact-us/): Main contact route for sales, general inquiries, and company contact information.
+
+## Trust, legal, and compliance
+
+- [SAP Taulia Agreements](https://taulia.com/sap-taulia-agreements/): Agreement documents for cloud service offerings, data protection, privacy, support policy, service levels, sub-processors, security measures, platform data security, export control, and sanctions compliance.
+- [Commitment to Sustainability](https://taulia.com/company/why-taulia/commitment-to-sustainability/): Sustainability commitments and related company context.
+- [Commitment to Security](https://taulia.com/company/why-taulia/commitment-to-security/): Security, governance, compliance, and platform protection positioning.
+- [Cookie Policy](https://taulia.com/cookie-policy/): Cookie policy and cookie category information.
+- [Privacy Statement](https://taulia.com/privacy-statement/): Privacy statement for Taulia websites and services.
+- [Terms and Conditions](https://taulia.com/terms-conditions/): Website terms and conditions.
+- [Code of Conduct for Taulia Partners](https://taulia.com/code-of-conduct-taulia-partners/): Partner code of conduct.
+- [Impressum](https://taulia.com/impressum/): Legal notice and company identification information.

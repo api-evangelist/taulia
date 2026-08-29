@@ -1,0 +1,3 @@
+Canonical: https://taulia.com/.well-known/security.txt
+Contact: mailto:bug-bounty@taulia.com
+Expires: 2026-12-31T00:00:00.000Z

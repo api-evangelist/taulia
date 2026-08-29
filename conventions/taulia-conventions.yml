@@ -1,0 +1,131 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  https://taulia.com/dss/ +
+  https://support.taulia.com/article/Taulia-Add-on-for-SAP-integration-suite-managed-gateway-SP07-Release-Notes
+note: >-
+  NOTHING HERE IS DERIVED FROM A SPEC — SAP Taulia publishes none. Every field is either
+  transcribed from the provider's own documentation with the URL attached, or recorded as
+  undocumented. Fields that a spec would normally answer are left explicitly undocumented rather
+  than inferred from a peer API.
+auth_style:
+  documented: true
+  summary: >-
+    OAuth 2.0 / OIDC JWT-bearer trust (audience extapi-buyer-integration, issuer a customer SAP
+    IAS tenant) for the buyer integration; assigned API key for direct Buyer/Supplier API
+    integration. Full detail in authentication/taulia-authentication.yml.
+  see: authentication/taulia-authentication.yml
+idempotency:
+  supported: unknown
+  documented: false
+  header: null
+  scope: null
+  retention: null
+  note: >-
+    No idempotency key, no retry-safety statement, and no de-duplication convention appears
+    anywhere on the public surface. The SP07 release notes do describe an acknowledgment protocol
+    on the ERP-add-on side — every send process carries a message acknowledgment ID, and the
+    Taulia Data Cleanup program resets the ERP Batch ID for objects unacknowledged after 12 hours
+    so they are automatically reprocessed — which is at-least-once delivery with reprocessing, not
+    a caller-supplied idempotency key. No Idempotency pointer is emitted.
+pagination:
+  documented: false
+  style: null
+  parameters: []
+  response_fields: []
+field_expansion:
+  documented: false
+metadata:
+  documented: false
+request_id_tracing:
+  documented: true
+  headers:
+  - name: x-tau-integration-source
+    direction: request (ERP add-on to Taulia Platform)
+    meaning: Identifies that the source system is using the Taulia Add-on for SAP Integration Suite, Managed Gateway.
+    source: >-
+      https://support.taulia.com/article/Taulia-Add-on-for-SAP-integration-suite-managed-gateway-SP07-Release-Notes
+  - name: x-tau-integration-source-version
+    direction: request (ERP add-on to Taulia Platform)
+    meaning: Taulia component version and support-pack level.
+    source: >-
+      https://support.taulia.com/article/Taulia-Add-on-for-SAP-integration-suite-managed-gateway-SP07-Release-Notes
+  note: >-
+    These are the only SAP Taulia request headers published anywhere. They are source-attribution
+    headers on the add-on's REST messages, not a correlation/request-id convention, and there is
+    no documented response header a caller can log.
+versioning:
+  documented: true
+  style: named seasonal platform release + numbered add-on support package
+  in_url: unknown
+  see: lifecycle/taulia-lifecycle.yml
+error_envelope:
+  documented: partial
+  format: http-status-codes
+  rfc9457: false
+  summary: >-
+    The Description of Software Services states the API "use[s] HTTP response codes to indicate
+    API errors" and that JSON is used for all requests and responses. No error body schema, error
+    code registry, or problem+json envelope is published, so no errors/ artifact was written —
+    there is nothing real to catalogue.
+  source: https://taulia.com/dss/
+rate_limit_signaling:
+  documented: false
+  see: rate-limits/taulia-rate-limits.yml
+dry_run_mode:
+  supported: unknown
+  documented: false
+  note: >-
+    No dry-run, preview, or validate-only mode is documented for any write operation.
+reversibility:
+  grade: documented
+  applicable: true
+  note: >-
+    SAP Taulia's write surface is genuinely reversible and the reversal is a first-class,
+    separately monitored integration process — but no reversal WINDOW is stated anywhere, which is
+    what keeps this at `documented` rather than `verified`. Never assert a window SAP Taulia has
+    not published; for an early-payment platform an invented window would be a claim about
+    someone's cash.
+  write_surfaces:
+  - operation: Early Payment Request
+    reversal: Early Payment Cancellation Request
+    operation_id: null
+    window: null
+    mechanism: >-
+      The Taulia Platform sends an Early Payment Cancellation Request to the ERP add-on, which
+      restores the original baseline date, payment terms details and payment method on the related
+      document(s) from the values captured in the Taulia register table. For Virtual Card
+      pay-before-maturity and for credit-note-netted positions, every document in the netted
+      position is returned to its pre-request state.
+    source: >-
+      https://support.taulia.com/article/Taulia-Add-on-for-SAP-integration-suite-managed-gateway-SP07-Release-Notes
+  - operation: Dynamic Discounting compliance credit note posting
+    reversal: Credit note reversal during Early Payment Cancel
+    operation_id: null
+    window: null
+    mechanism: >-
+      On cancellation the compliance credit note is reversed. If the original posting period is
+      closed, the closed-period reversal reason is used and the cancellation request's own date
+      becomes the posting date, so the cancellation still processes automatically. This is a
+      documented behaviour of the reversal path, not a stated time limit on it.
+    source: >-
+      https://support.taulia.com/article/Taulia-Add-on-for-SAP-integration-suite-managed-gateway-SP07-Release-Notes
+  - operation: Early Payment Request (netted position, any document fails)
+    reversal: automatic all-or-nothing revert
+    operation_id: null
+    window: null
+    mechanism: >-
+      "An error in processing any of the documents in the netted position will result in reverting
+      changes to all documents and a rejection will be sent to the Taulia Platform."
+    source: >-
+      https://support.taulia.com/article/Taulia-Add-on-for-SAP-integration-suite-managed-gateway-SP07-Release-Notes
+  missing_for_verified:
+  - >-
+    No published deadline for cancelling an early payment request — the practical bound is implied
+    by the payment run and, for Virtual Cards, by maturity, but SAP Taulia states neither as a
+    window.
+cross_links:
+  authentication: authentication/taulia-authentication.yml
+  lifecycle: lifecycle/taulia-lifecycle.yml
+  rate_limits: rate-limits/taulia-rate-limits.yml
+  conformance: conformance/taulia-conformance.yml

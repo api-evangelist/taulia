@@ -1,0 +1,79 @@
+generated: '2026-08-29'
+method: searched
+source: https://status.taulia.com/ + https://taulia.com/sap-taulia-agreements/ + https://support.taulia.com/technical-resources/sap/sap-release-notes
+status_page:
+  url: https://status.taulia.com/
+  status: 200
+  provider: Atlassian Statuspage
+  machine_readable_api: https://status.taulia.com/api/v2/summary.json
+  api_status: 200
+  component_groups:
+  - North America
+  - Europe
+  - Staging
+  - Middle East Production
+  - Middle East Staging
+  components_per_group:
+  - Web Portal
+  - XMLRPC
+  - AnyERP
+  - eFile/eSend
+  - Analytics
+  note: >-
+    The status page names XMLRPC as a first-class monitored component in every region, alongside
+    AnyERP and eFile/eSend. That is the strongest public confirmation that SAP Taulia's
+    programmatic surface is an XML-RPC / file-transfer integration estate rather than a public
+    REST developer platform. A Staging component group exists in both NA/EU and the Middle East,
+    so a non-production environment is provisioned per customer.
+  observed_incidents_open: 0
+  observed_scheduled_maintenance:
+  - name: ME1PRD and ME1STG scheduled maintenance
+    scheduled_for: '2026-09-11T15:00:00.000Z'
+  - name: Staging, EU1PRD and NA1PRD Maintenance
+    scheduled_for: '2026-09-12T15:00:00.000Z'
+sla:
+  published: true
+  document: Service Level Agreement for Cloud Services
+  url: https://taulia.com/sap-taulia-agreements/
+  uptime_percentage: null
+  note: >-
+    The SLA is published as a downloadable contract document from the Agreements page rather than
+    as a web page with a stated uptime percentage. The Description of Software Services states
+    that production environments are covered by SLAs and that staging/test environments are
+    provided "with best intent availability" with production SLAs not applying.
+support_policy:
+  published: true
+  document: Support Policy for Cloud Services
+  url: https://taulia.com/sap-taulia-agreements/
+  portal: https://support.taulia.com/
+  technical_support_policy_link: https://support.taulia.com/
+versioning:
+  scheme: named-release + support-package
+  detail: >-
+    Two parallel version lines are published. The Taulia Platform ships seasonal named releases
+    (Spring / Fall + year). The ERP add-ons ship numbered support packages — Taulia Add-on for SAP
+    4.1 / 4.2 / 5.0 / 5.1 / 5.2 / 5.3, Taulia Add-on for SAP Integration Suite Managed Gateway
+    SP02 through SP07, and Taulia Oracle EBS R12 Add-on SP1.5 / SP1.6.
+  api_version_in_path: unknown
+  note: No public API version policy or version-in-URL convention is documented.
+support_windows:
+- release: Taulia Add-on for SAP Integration Suite, Managed Gateway SP07
+  release_date: '2026-05-15'
+  support_period_start: '2026-05-15'
+  support_period_end: '2028-05-15'
+  source: https://support.taulia.com/article/Taulia-Add-on-for-SAP-integration-suite-managed-gateway-SP07-Release-Notes
+  note: >-
+    Each add-on support package release note states an explicit two-year support period. This is
+    the closest thing SAP Taulia publishes to a deprecation window, and it applies to the ERP
+    add-on component, not to the platform API.
+deprecation_policy:
+  published: false
+  sunset_header: unknown
+  deprecation_header: unknown
+  rfc8594: false
+  note: >-
+    No deprecation or sunset policy is published, and with no machine-readable contract there is
+    no way to observe Sunset/Deprecation response headers. The two-year add-on support period
+    above is a product support window, not an API deprecation policy, so no Deprecation pointer
+    is emitted.
+deprecated_operations: []

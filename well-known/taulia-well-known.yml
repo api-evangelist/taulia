@@ -1,0 +1,83 @@
+generated: '2026-08-29'
+method: probed
+source: live HTTPS probes of every SAP Taulia host reachable from apis.yml, llms.txt and DNS
+note: >-
+  taulia.com serves a real RFC 9116 security.txt naming a bug-bounty mailbox. The 200 on
+  support.taulia.com/.well-known/openid-configuration is the stock Salesforce Experience Cloud
+  OIDC discovery document for the Taulia support community (issuer
+  https://support.taulia.com/vforcesite, Salesforce platform scopes) — it is served on a
+  Taulia-controlled host but it is NOT the authorization server for the Taulia Buyer or
+  Supplier API, and nothing was derived from it. The 200 on status.taulia.com/.well-known/security.txt
+  is Atlassian Statuspage's own PGP-signed file (Canonical atlassian.com), not Taulia's, and is
+  recorded as third-party infrastructure rather than credited to the provider.
+hosts:
+- host: taulia.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: taulia-security.txt
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: support.taulia.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: taulia-support-openid-configuration.json
+    note: >-
+      Salesforce Experience Cloud community identity, not a Taulia API authorization server.
+  - path: /.well-known/security.txt
+    status: 401
+  - path: /.well-known/oauth-authorization-server
+    status: 401
+  - path: /.well-known/api-catalog
+    status: 401
+  - path: /.well-known/ai-plugin.json
+    status: 401
+  - path: /.well-known/agent-card.json
+    status: 401
+  - path: /.well-known/agent.json
+    status: 401
+- host: status.taulia.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    note: >-
+      Atlassian Statuspage's own security.txt (Canonical https://www.atlassian.com/.well-known/security.txt).
+      Third-party hosting infrastructure — not saved and not credited to SAP Taulia.
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: login.na1prd.taulia.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 302
+    note: Every /.well-known/* path 302s to the tenant login page; no document served.
+  - path: /.well-known/openid-configuration
+    status: 302
+  - path: /.well-known/agent-card.json
+    status: 302
+  - path: /.well-known/agent.json
+    status: 302
+- host: api.taulia.com
+  documents:
+  - path: /.well-known/security.txt
+    status: '<no response>'
+    note: >-
+      api.taulia.com resolves in DNS (CNAME soapelbg-599781985.us-east-1.elb.amazonaws.com,
+      32.196.85.142) but the TLS handshake is dropped by the origin for anonymous clients
+      (curl SSL_ERROR_SYSCALL), so no path on this host could be probed.

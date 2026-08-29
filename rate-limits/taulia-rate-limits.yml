@@ -1,0 +1,18 @@
+generated: '2026-08-29'
+method: searched
+source: https://taulia.com/dss/
+limit_count: 0
+limits: []
+response_headers: []
+exhaustion_status_code: null
+note: >-
+  No rate limits are published. The Description of Software Services documents the API style
+  (RESTful, JSON, HTTP verbs, HTTP status codes for errors) but names no quota, no window, no
+  burst allowance and no rate-limit response headers. With no machine-readable contract and an API
+  host that drops anonymous TLS connections, no live header could be observed either — an
+  unauthenticated request to api.taulia.com never completes a handshake.
+evidence:
+- url: https://taulia.com/dss/
+  status: 200
+- url: https://api.taulia.com/
+  status: '<no response>'

@@ -1,0 +1,42 @@
+generated: '2026-08-29'
+method: searched
+source: https://taulia.com/sap-taulia-agreements/
+trust_center:
+  present: false
+  url: null
+  note: >-
+    No dedicated trust centre is served. trust.taulia.com resolves in DNS to a Salesforce
+    Experience Cloud site (tauliaops.my.site.com) but the HTTPS request returns no response, and
+    no trust.sap.com or trust portal page for SAP Taulia was found. The closest published
+    equivalent is the Agreements, Data Protection and Privacy page, which links the legal
+    security and privacy documents rather than certifications and audit reports.
+certifications:
+- name: SSAE SOC 1 Type 2
+  status: claimed
+  evidence: https://taulia.com/company/why-taulia/commitment-to-security/
+  note: >-
+    The page states SAP Taulia "is regularly audited for SSAE 16 SOC1 type 2 compliance". No
+    report, audit date, or auditor is published, and no SOC 2 report is offered for download.
+- name: PCI DSS (website scanning)
+  status: claimed-partial
+  evidence: https://taulia.com/company/why-taulia/commitment-to-security/
+  note: >-
+    The claim is that the website is "scanned daily by an expert third party using advanced
+    security scanning methods approved for the Pay Card Industry (PCI)". That is a scanning
+    practice, not a PCI DSS certification of the platform.
+- name: GDPR / data protection
+  status: documented
+  evidence: https://taulia.com/sap-taulia-agreements/
+  note: >-
+    Data Processing Agreement, DPA Supplement, Personal Data Sub-Processors and Privacy Statement
+    are published as downloadable agreement documents.
+- name: Export control and sanctions compliance
+  status: documented
+  evidence: https://taulia.com/sap-taulia-agreements/
+evidence:
+- url: https://trust.taulia.com/
+  status: '<no response>'
+- url: https://taulia.com/sap-taulia-agreements/
+  status: 200
+- url: https://taulia.com/company/why-taulia/commitment-to-security/
+  status: 200

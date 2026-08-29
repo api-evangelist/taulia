@@ -1,0 +1,113 @@
+generated: '2026-08-29'
+method: searched
+source: https://taulia.com/dss/ + https://taulia.com/company/why-taulia/commitment-to-security/ + https://taulia.com/sap-taulia-agreements/
+note: >-
+  NO MACHINE-READABLE CONTRACT EXISTS for SAP Taulia, so every row below is evidenced from the
+  provider's own prose (Description of Software Services, Commitment to Security, Agreements) and
+  from live probes — never from a spec. Rows that a contract would normally prove are marked
+  conforms:false with the reason, rather than credited from marketing copy.
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    https://support.taulia.com/article/Easy-Guide-to-Activating-SAP-Taulia-with-S-4HANA-Cloud-Public-Edition
+    documents an OAuth/OIDC JWT-bearer trust with audience extapi-buyer-integration, an IAS issuer,
+    and a provider JWKS URL registered in Taulia under Settings > Integrations > Setup Token.
+  evidence_type: docs-prose
+- id: oidc
+  conforms: true
+  evidence: >-
+    The same activation guide requires an OpenID Connect application in SAP Cloud Identity
+    Services and consumes the IAS /.well-known/openid-configuration document.
+  evidence_type: docs-prose
+- id: saml2
+  conforms: true
+  evidence: >-
+    https://taulia.com/dss/ states SAML 2.0 single sign-on is supported with response signing
+    (assertion encryption not supported).
+  evidence_type: docs-prose
+- id: rfc9116
+  conforms: true
+  evidence: >-
+    https://taulia.com/.well-known/security.txt returns 200 with Canonical, Contact and Expires
+    fields. Policy, Encryption and Preferred-Languages are absent.
+  evidence_type: probed
+- id: rfc9457
+  conforms: false
+  evidence: No problem+json error envelope is published and no contract exists to inspect.
+  evidence_type: none
+- id: idempotency
+  conforms: false
+  evidence: >-
+    No idempotency key, header, or retry-safety convention is documented anywhere on the public
+    surface.
+  evidence_type: none
+- id: pagination
+  conforms: false
+  evidence: No pagination convention is published for the Buyer or Supplier API.
+  evidence_type: none
+- id: fapi
+  conforms: false
+  evidence: Not claimed. SAP Taulia is a corporate working-capital platform, not an open-banking API.
+  evidence_type: none
+- id: psd2
+  conforms: false
+  evidence: Not claimed anywhere on the public surface.
+  evidence_type: none
+- id: scim
+  conforms: false
+  evidence: >-
+    User provisioning is described as portal-managed with SAML SSO; no SCIM schema URN is
+    published.
+  evidence_type: none
+- id: odata
+  conforms: false
+  evidence: >-
+    No $metadata surface is exposed. The SAP-side integration is delivered as an ABAP add-on and
+    an Integration Suite managed-gateway package, not as a public OData service.
+  evidence_type: none
+domain_standards:
+  note: >-
+    REWARD-ONLY and DELIBERATELY NOT CLAIMED. Procure-to-pay and supply-chain finance do have
+    domain standards, and SAP Taulia's own Description of Software Services names several of them
+    as supported interchange formats. But domain-standard conformance is a property of a
+    CONTRACT, and SAP Taulia publishes none — there is no cXML message, no EDI transaction set, no
+    ISO 20022 message type and no AS2 endpoint anywhere in a machine-readable artifact we can
+    point at. These are therefore recorded as vendor claims awaiting a contract, not as
+    conformance.
+  claimed:
+  - standard: cXML
+    claimed_in: https://taulia.com/dss/
+    contract_evidence: none
+  - standard: EDI (flat-file interchange)
+    claimed_in: https://taulia.com/dss/
+    contract_evidence: none
+  - standard: AS2 (RFC 4130) transport
+    claimed_in: https://taulia.com/dss/
+    contract_evidence: none
+  - standard: XML-RPC
+    claimed_in: https://status.taulia.com/
+    contract_evidence: none
+    note: >-
+      XMLRPC is a named, per-region monitored component on the SAP Taulia status page. That is
+      operational evidence the interface exists and is load-bearing; it is not a contract.
+compliance:
+  certifications_claimed:
+  - name: SSAE SOC 1 Type 2
+    source: https://taulia.com/company/why-taulia/commitment-to-security/
+    report_available: false
+  - name: PCI-approved third-party website scanning
+    source: https://taulia.com/company/why-taulia/commitment-to-security/
+    report_available: false
+    note: A scanning practice, not a PCI DSS certification of the platform.
+  programs_documented:
+  - name: GDPR / Data Processing Agreement
+    source: https://taulia.com/sap-taulia-agreements/
+  - name: Personal Data Sub-Processors register
+    source: https://taulia.com/sap-taulia-agreements/
+  - name: Taulia Platform Data Security Standard Policy
+    source: https://taulia.com/sap-taulia-agreements/
+  - name: Export Control and Sanctions Compliance Notice
+    source: https://taulia.com/sap-taulia-agreements/
+  - name: Security Measures for Cloud Services
+    source: https://taulia.com/sap-taulia-agreements/

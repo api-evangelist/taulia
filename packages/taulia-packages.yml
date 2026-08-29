@@ -1,0 +1,93 @@
+generated: '2026-08-29'
+method: searched
+source: registry searches across npm, PyPI, RubyGems, Packagist, NuGet + https://github.com/taulia
+package_count: 0
+official_sdk_count: 0
+packages: []
+note: >-
+  SAP Taulia publishes no client SDKs. Searched npm (registry search "taulia": 0 results), PyPI
+  (/simple/taulia/ 404), RubyGems (0), Packagist (0 relevant — only fuzzy name matches), NuGet (0)
+  and the public GitHub organisation. Distribution of Taulia's integration software is not through
+  a package registry: the ERP add-ons ship as SAP transports and an SAP Integration Suite managed
+  gateway package delivered to customers, and the Taulia Connector is a hosted file-transfer
+  service, so there is no registry entry to date. No SDKs pointer is emitted, because there is no
+  SDK.
+github_organization:
+  url: https://github.com/taulia
+  status: 200
+  name: Taulia Inc
+  created: '2011-04-03'
+  public_repos: 7
+  api_client_repos: 0
+  note: >-
+    All seven public repos are internal JVM/Python infrastructure, not API clients — SimpleGit
+    (Jenkins Git plugin), mutagen and mutagen-cassandra (schema migration), config (JVM config
+    library), log4j2-gelf (log appender), and forks of simple-salesforce / salesforce-bulk pinned
+    to Python 2.7. The most recently pushed repo is salesforce-bulk-2-7 on 2021-01-08; five of the
+    seven have not been pushed since 2017 or earlier. Nothing here wraps a Taulia API.
+  repos:
+  - name: salesforce-bulk-2-7
+    language: Python
+    version: null
+    published: null
+    last_push: '2021-01-08'
+    official: true
+    api_client: false
+  - name: simple-salesforce-2-7
+    language: Python
+    version: null
+    published: null
+    last_push: '2020-09-06'
+    official: true
+    api_client: false
+  - name: log4j2-gelf
+    language: Java
+    version: null
+    published: null
+    last_push: '2017-08-03'
+    official: true
+    api_client: false
+  - name: config
+    language: Java
+    version: null
+    published: null
+    last_push: '2015-07-09'
+    official: true
+    api_client: false
+  - name: mutagen-cassandra
+    language: Java
+    version: null
+    published: null
+    last_push: '2015-04-24'
+    official: true
+    api_client: false
+  - name: SimpleGit
+    language: Java
+    version: null
+    published: null
+    last_push: '2014-08-07'
+    official: true
+    api_client: false
+  - name: mutagen
+    language: Java
+    version: null
+    published: null
+    last_push: '2013-12-31'
+    official: true
+    api_client: false
+registries_checked:
+- registry: npm
+  query: https://registry.npmjs.org/-/v1/search?text=taulia
+  results: 0
+- registry: pypi
+  query: https://pypi.org/simple/taulia/
+  status: 404
+- registry: rubygems
+  query: https://rubygems.org/api/v1/search.json?query=taulia
+  results: 0
+- registry: packagist
+  query: https://packagist.org/search.json?q=taulia
+  results: 0
+- registry: nuget
+  query: https://azuresearch-usnc.nuget.org/query?q=taulia
+  results: 0

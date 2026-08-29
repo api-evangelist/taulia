@@ -1,0 +1,76 @@
+generated: '2026-08-29'
+method: searched
+source: https://support.taulia.com/article/Easy-Guide-to-Activating-SAP-Taulia-with-S-4HANA-Cloud-Public-Edition + https://taulia.com/dss/
+note: >-
+  DERIVED FROM DOCS ONLY. SAP Taulia publishes no OpenAPI, so there are no securitySchemes to
+  read; every scheme below is transcribed from SAP Taulia's own published documentation and is
+  marked with the page it came from. Nothing here was inferred from a spec.
+docs:
+- https://support.taulia.com/article/Easy-Guide-to-Activating-SAP-Taulia-with-S-4HANA-Cloud-Public-Edition
+- https://taulia.com/dss/
+- https://support.taulia.com/technical-resources/connection-type
+schemes:
+- id: oauth2-jwt-bearer-ias
+  type: oauth2
+  subtype: jwt-bearer-trust
+  applies_to: Buyer integration API (SAP S/4HANA Cloud Public Edition activation)
+  documented: true
+  source: https://support.taulia.com/article/Easy-Guide-to-Activating-SAP-Taulia-with-S-4HANA-Cloud-Public-Edition
+  detail: >-
+    The customer creates an OpenID Connect application in SAP Cloud Identity Services (IAS),
+    configures a client secret for API authentication, and adds a self-defined `aud` attribute to
+    single sign-on. The token is then trusted by SAP Taulia through a token setup registered in
+    the Taulia platform under Settings > Integrations > Setup Token.
+  parameters:
+    audience: extapi-buyer-integration
+    issuer: the customer's SAP IAS tenant URL (e.g. https://<tenant>.accounts400.ondemand.com)
+    jwks_url: >-
+      the IAS certificate URL — the customer's
+      https://<IAS INSTANCE URL>/.well-known/openid-configuration or its /oauth2/certs endpoint
+    subject: the Client ID generated in IAS
+  note: >-
+    The audience string `extapi-buyer-integration` is the only publicly published identifier of
+    SAP Taulia's external buyer integration API.
+- id: api-key-secret
+  type: apiKey
+  applies_to: Taulia Buyer API and Taulia Supplier API (direct REST integration)
+  documented: true
+  source: https://taulia.com/dss/
+  detail: >-
+    The Description of Software Services states that the direct API integration follows RESTful
+    principles with resource-oriented URLs, JSON request and response bodies, HTTP verbs and HTTP
+    status codes for errors, and that authentication uses an assigned API key.
+  parameters:
+    header: unknown
+    key_prefix: unknown
+  note: >-
+    The DSS does not publish the header name, the signing algorithm, or a key prefix. Key issuance
+    is handled by SAP Taulia during customer onboarding, not through self-service.
+- id: saml2-sso
+  type: federated-sso
+  applies_to: Taulia platform web portal (human sign-in, not API)
+  documented: true
+  source: https://taulia.com/dss/
+  detail: >-
+    SAML 2.0 single sign-on is supported with response signing; assertion encryption is not
+    supported.
+- id: mfa
+  type: two-factor
+  applies_to: Taulia platform web portal (human sign-in, not API)
+  documented: true
+  source: https://taulia.com/dss/
+  detail: Two-factor authentication is available and can be mandated for an account.
+not_the_api_authorization_server:
+- url: https://support.taulia.com/.well-known/openid-configuration
+  status: 200
+  issuer: https://support.taulia.com/vforcesite
+  note: >-
+    This 200 is the stock Salesforce Experience Cloud OIDC discovery document for the SAP Taulia
+    support community. Its scopes are Salesforce platform scopes (api, web, chatter_api,
+    cdp_*_api, wave_api …), not Taulia API scopes. It is recorded so a later pass does not mistake
+    it for the Taulia API authorization server; nothing was derived from it and no scopes/
+    artifact was written from it.
+gaps:
+- No public authentication reference page with header names, token lifetimes, or error responses.
+- No self-service key issuance; credentials are provisioned during onboarding.
+- No published OAuth scope list for the Buyer or Supplier API.
