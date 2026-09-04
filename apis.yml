@@ -12,6 +12,21 @@ description: >-
   add-ons for SAP, SAP Integration Suite managed gateway and Oracle EBS. No OpenAPI, AsyncAPI,
   GraphQL SDL, WSDL, Postman collection or SDK is published anywhere, and API credentials are
   provisioned during onboarding rather than through self-service.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  - rate-limits
+  - security
+  - sandbox
+  generated: '2026-09-02'
+  method: derived
 image: https://taulia.com/wp-content/uploads/2025/04/android-chrome-512x512-1-300x300.png
 url: https://raw.githubusercontent.com/api-evangelist/taulia/refs/heads/main/apis.yml
 x-type: company
